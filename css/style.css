@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -19,7 +21,7 @@ body {
 
 .grid {
     display: grid;
-    gap: 10px;
+    gap: 12px;
 }
 
 .w-100 {
@@ -37,17 +39,17 @@ body {
 }
 
 .calculator-frame {
-    max-width: 350px;
+    max-width: 320px;
     margin: auto;
     padding: 40px 20px;
-    background: #dad7d7;
+    background: #D6E0F0;
     border-radius: 20px;
-    border: 4px outset rgba(160, 158, 158, 0.486);
+    border: 4px outset rgba(214, 224, 240, 0.37)
 }
 
 .calculator-screen-container {
     border: 2px inset #b9b6b6;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 25px;
 }
 
@@ -68,11 +70,13 @@ body {
     padding: 8px 2px;
     border: none;
     outline: none;
+    background-color: #8D93AB;
+    color: #ffffff;
+    font-family: 'Akaya Telivigala', cursive;
 }
 
 .trig-btn {
     background-color: #00ff00;
-    /* color: #00ff00; */
 }
 
 .clean-btn {
