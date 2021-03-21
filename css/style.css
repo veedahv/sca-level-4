@@ -44,7 +44,8 @@ body {
     padding: 40px 20px;
     background: #D6E0F0;
     border-radius: 20px;
-    border: 4px outset rgba(214, 224, 240, 0.37)
+    border: 4px outset rgba(214, 224, 240, 0.37);
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, .2);
 }
 
 .calculator-screen-container {
@@ -54,12 +55,12 @@ body {
     padding: 12px;
     margin-bottom: 25px;
     text-align: right;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .output-screen {
-    font-size: 22px;
-    margin-bottom: 5px;
+    font-size: 28px;
+    margin-bottom: 7px;
 }
 
 .user-input {
