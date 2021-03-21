@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">     -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <title>Fylo</title>
+</head>
+
+<body>
+    <main>
+        <section class="home-section">
+            <div class="container">
+                <div class="calculator-frame">
+                    <div class="calculator-body">
+                        <div class="calculator-screen-container">
+                            <p class="input-screen" id="input-screen">0</p>
+                            <p class="output-screen" id="output-screen">0</p>
+                            <input type="text" name="user-input" id="user-input" class="user-input" disabled>
+                        </div>
+                        <div class="calculator-keypad-frame grid">
+                            <div class="keypad-num-frame grid grid-3">
+                                <button class="keypad-btn trig-btn sin" id="sin">sin</button>
+                                <button class="keypad-btn trig-btn cos" id="cos">cos</button>
+                                <button class="keypad-btn trig-btn tan" id="tan">tan</button>
+                            </div>
+                            <div class="keypad-clear-frame grid grid-2">
+                                <button class="keypad-btn clean-btn" id="clear-btn">ac</button>
+                                <button class="keypad-btn clean-btn">del</button>
+                            </div>
+                            <div class="keypad-num-frame grid grid-3">
+                                <button class="num-keys keypad-btn">1</button>
+                                <button class="num-keys keypad-btn">2</button>
+                                <button class="num-keys keypad-btn">3</button>
+                                <button class="num-keys keypad-btn">4</button>
+                                <button class="num-keys keypad-btn">5</button>
+                                <button class="num-keys keypad-btn">6</button>
+                                <button class="num-keys keypad-btn">7</button>
+                                <button class="num-keys keypad-btn">8</button>
+                                <button class="num-keys keypad-btn">9</button>
+                            </div>
+                            <div class="keypad-num-frame grid grid-2">
+                                <button class="keypad-btn" id="times">&times;</button>
+                                <button class="keypad-btn" id="divide">&divide;</button>
+                                <button class="keypad-btn" id="plus">&plus;</button>
+                                <button class="keypad-btn" id="minus">&minus;</button>
+                                <button class="keypad-btn" id="sqrt"><sup>x</sup>&Sqrt;</button>
+                                <button class="keypad-btn" id="pow">^</button>
+                            </div>
+                            <div class="keypad-num-frame grid grid-3">
+                                <button class="dot-keys keypad-btn">&bull;</button>
+                                <button class="num-keys keypad-btn">0</button>
+                                <button class="keypad-btn">e</button>
+                            </div>
+                            <div class="keypad-num-frame grid grid-1">
+                                <button class="calc keypad-btn" id="calc">=</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- e e ec e c ce e e e 3 e e e e c cce e e e e e e   e e d  e  e e ed -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="flex">
+                <div>
+                    <img src="images/logo.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
