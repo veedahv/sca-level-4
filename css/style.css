@@ -86,6 +86,16 @@ body {
     font-size: 18px;
 }
 
+.keypad-btn:hover {
+    box-shadow: 3px 4px 5px rgb(0 0 0 / 20%);
+    transform: scale(1.02);
+}
+
+.keypad-btn:active {
+    box-shadow: 3px 4px 5px rgb(0 0 0 / 20%);
+    transform: scale(1.005);
+}
+
 .trig-btn {
     background-color: #00ff00;
 }
