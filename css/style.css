@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Open+Sans:wght@600&display=swap');
 
 * {
     padding: 0;
@@ -56,6 +57,7 @@ body {
     margin-bottom: 25px;
     text-align: right;
     font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .output-screen {
