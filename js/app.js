@@ -82,12 +82,28 @@ const clearFunc = () => {
 
 const delFunc = () => {
     console.log('jjj');
-    x = 0;
-    y = 0;
-    z = '';
-    preCalc = '';
-    userInput.value = '';
-    inputScreen.innerText = 0;
+    // x = 0;
+    // y = 0;
+    // z = '';
+    // preCalc = '';
+    console.log(userInput.value.length);
+    if (userInput.value.length <= 1) {
+        x = 0;
+        y = 0;
+        z = '';
+        // preCalc = '';
+        userInput.value = '';
+        inputScreen.innerText = 0;        
+        outputScreen.innerHTML = preCalc + x;
+    } else {
+        let inputSplit = userInput.value.slice(0, -1);
+        console.log(inputSplit);
+        userInput.value = inputSplit;
+        x = userInput.value;
+        outputScreen.innerHTML = preCalc + x;
+        inputScreen.innerText = userInput.value;        
+    }
+    // inputScreen.innerText = 0;
     // inputScreen.innerText = userInput.value;
     // userInput.value = '';
 }
