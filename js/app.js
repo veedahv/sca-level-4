@@ -44,7 +44,8 @@ const dotValue = () => {
     userInput.value += '.';
     console.log(userInput.value);
     x = userInput.value;
-    inputScreen.innerText = preCalc + x;
+    outputScreen.innerHTML = preCalc + x;
+    inputScreen.innerText = userInput.value;
     console.log(opCalc);
 }
 
@@ -74,6 +75,7 @@ const clearFunc = () => {
     preCalc = '';
     userInput.value = '';
     inputScreen.innerText = 0;
+    outputScreen.innerText = 0;
     // inputScreen.innerText = userInput.value;
     // userInput.value = '';
 }
