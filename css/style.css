@@ -1,5 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 * {
     padding: 0;
@@ -42,10 +43,10 @@ body {
 .calculator-frame {
     max-width: 320px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 25px 20px;
     background: #D6E0F0;
     border-radius: 20px;
-    border: 4px outset rgba(214, 224, 240, 0.37);
+    /* border: 4px outset rgba(214, 224, 240, 0.37); */
     box-shadow: 3px 4px 5px rgba(0, 0, 0, .2);
 }
 
@@ -53,22 +54,34 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    font-size: 14px;
+    align-items: center;
 }
 
 .calculator-logo {
     display: flex;
     align-items: flex-end;
-    font-size: 14px;
 }
 
 .pre-logo {
     text-transform: uppercase;
     /* font-size: 14px; */
+    font-family: 'Dancing Script', cursive;
 }
 
 .post-logo {
     text-transform: capitalize;
     /* font-size: 10px; */
+}
+
+.time-screen {
+    /* background-color: #8D93AB; */
+    background-color: rgba(0, 0, 0, .2);
+    border: 4px inset #8D93AB;
+    padding: 5px;
+    /* text-align: right; */
+    /* font-size: 18px; */
+    font-family: 'Open Sans', sans-serif;
 }
 
 .calculator-screen-container {
@@ -111,6 +124,7 @@ body {
 
 .calculator-keypad-frame {
     grid-template-columns: 3fr 2fr;
+    margin-bottom: 20px;
 }
 
 .keypad-btn {

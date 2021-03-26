@@ -28,6 +28,19 @@ let x = 0,
 
 //  postCalc = '';
 
+const timeFunc = () => {
+    // const initialTime = new Date();
+    // let timeNow = new Date().toLocaleTimeString("en-US");
+    let timeNow = new Date().toLocaleTimeString("it-IT");
+    timeScreen.innerText = timeNow;
+    // const initialTime = Date.now();
+    // console.log(ho);
+    // console.log(initialTime);
+    console.log(timeNow);
+}
+
+setInterval(timeFunc, 1000);
+
 const opValue = (numKey) => {
     // console.log(numKey);
     // console.log(numKey.innerText);
