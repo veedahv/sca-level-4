@@ -49,6 +49,28 @@ body {
     box-shadow: 3px 4px 5px rgba(0, 0, 0, .2);
 }
 
+.calculator-top-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.calculator-logo {
+    display: flex;
+    align-items: flex-end;
+    font-size: 14px;
+}
+
+.pre-logo {
+    text-transform: uppercase;
+    /* font-size: 14px; */
+}
+
+.post-logo {
+    text-transform: capitalize;
+    /* font-size: 10px; */
+}
+
 .calculator-screen-container {
     /* background-color: #8D93AB; */
     background-color: rgba(0, 0, 0, .2);

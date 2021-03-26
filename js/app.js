@@ -8,8 +8,10 @@ const plusBtn = document.querySelector('#plus'),
     sinBtn = document.querySelector('#sin'),
     cosBtn = document.querySelector('#cos'),
     tanBtn = document.querySelector('#tan'),
+    lnBtn = document.querySelector('#ln'),
     clearBtn = document.querySelector('#clear-btn'),
     delBtn = document.querySelector('#del-btn'),
+    timeScreen = document.querySelector('#time-screen'),
     userInput = document.querySelector('#user-input'),
     inputScreen = document.querySelector('#input-screen'),
     outputScreen = document.querySelector('#output-screen'),
@@ -32,38 +34,53 @@ const opValue = (numKey) => {
     userInput.value += numKey.innerText;
     console.log(userInput.value);
     x = userInput.value;
-    outputScreen.innerHTML = preCalc + x;
-    inputScreen.innerText = userInput.value;
+    // outputScreen.innerHTML = preCalc + x;
+    // inputScreen.innerText = userInput.value;
+    inputScreen.innerHTML = preCalc + x;
+    // inputScreen.innerText = userInput.value;
     console.log(opCalc);
     z = x;
 }
 
 const dotValue = () => {
-    // console.log(numKey);
-    // console.log(numKey.innerText);
-    userInput.value += '.';
-    console.log(userInput.value);
-    x = userInput.value;
-    outputScreen.innerHTML = preCalc + x;
-    inputScreen.innerText = userInput.value;
-    console.log(opCalc);
+    const checkValue = userInput.value.includes('.');    
+    if (!checkValue) {
+        userInput.value += '.';
+        x = userInput.value;
+        inputScreen.innerHTML = preCalc + x;
+    }
 }
 
-const valueChange = () => {
-    // console.log(numKey);
-    // console.log(numKey.innerText);
-    // userInput.value += '.';
-    console.log('listnr');
-    console.log(userInput.value);
-    // console.log(opCalc);
+const roundCalcFunc = () => {
+    // y = Math.round(y);
+    y = Math.round(y * 100000) / 100000;
+    console.log(y);
 }
 
 const postCalcFunc = (opSign) => {
     // y = x;
+    console.log(y);
+    roundCalcFunc();
+    console.log(y);
     preCalc = y + opSign;
     userInput.value = '';
     console.log(opSign);
-    outputScreen.innerText = preCalc;
+    outputScreen.innerText = y;
+    inputScreen.innerText = preCalc;
+    // userInput.value = '';
+}
+
+const postTrigFunc = (opSign) => {
+    // y = x;
+    console.log(y);
+    roundCalcFunc();
+    console.log(y);
+    preCalc = opSign;
+    userInput.value = '';
+    console.log(opSign);
+    console.log(preCalc);
+    outputScreen.innerText = y;
+    inputScreen.innerText = preCalc;
     // userInput.value = '';
 }
 
@@ -93,7 +110,7 @@ const delFunc = () => {
         z = '';
         // preCalc = '';
         userInput.value = '';
-        inputScreen.innerText = 0;        
+        inputScreen.innerText = 0;
         outputScreen.innerHTML = preCalc + x;
     } else {
         let inputSplit = userInput.value.slice(0, -1);
@@ -101,7 +118,7 @@ const delFunc = () => {
         userInput.value = inputSplit;
         x = userInput.value;
         outputScreen.innerHTML = preCalc + x;
-        inputScreen.innerText = userInput.value;        
+        inputScreen.innerText = userInput.value;
     }
     // inputScreen.innerText = 0;
     // inputScreen.innerText = userInput.value;
@@ -116,7 +133,7 @@ const checkOpFunc = () => {
         z = '';
         opTrig = '';
     } else {
-    inputScreen.innerText = 0;
+        inputScreen.innerText = 0;
         switch (opCalc) {
             case 'plus':
                 // preCalc = y + ' + '; 
@@ -151,7 +168,10 @@ const checkOpFunc = () => {
             case 'sqrt':
                 // preCalc = y + ' + '; 
                 // opCalc = 'minus';
+                console.log(y);
+                // y = parseFloat(x) + parseFloat(y);
                 y = 1 / parseFloat(y);
+                console.log(y);
                 y = parseFloat(x) ** parseFloat(y);
                 // postCalcFunc(' ^ ');
                 break;
@@ -173,7 +193,7 @@ const checkTrigFunc = () => {
         // let theta = parseFloat(x) * Math.PI / 2;   
         let theta = parseFloat(x) * Math.PI / 180;
         // theta = theta / Math.PI;   
-        z === '' ? y = 1 : y = parseFloat(y);
+        // z === '' ? y = 1 : y = parseFloat(y);
         console.log(y);
         // preCalc = x + opSign;
         switch (opTrig) {
@@ -187,18 +207,90 @@ const checkTrigFunc = () => {
                 // postCalcFunc(' + ');
                 console.log('sin');
                 break;
-
+            case 'cos':
+                // preCalc = y + ' + '; 
+                // opCalc = 'plus';
+                // y = parseFloat(y) + parseFloat(x);     
+                y = parseFloat(y) * Math.cos(theta);
+                console.log(1 * Math.cos(theta));
+                console.log(y);
+                // postCalcFunc(' + ');
+                console.log('cos');
+                break;
+            case 'tan':
+                // preCalc = y + ' + '; 
+                // opCalc = 'plus';
+                // y = parseFloat(y) + parseFloat(x);     
+                y = parseFloat(y) * Math.tan(theta);
+                console.log(1 * Math.tan(theta));
+                console.log(y);
+                // postCalcFunc(' + ');
+                console.log('tan');
+                break;
+                case 'ln':
+                // preCalc = y + ' + '; 
+                // opCalc = 'plus';
+                // y = parseFloat(y) + parseFloat(x);     
+                y = parseFloat(y) * Math.log(x);
+                console.log(1 * Math.log(x));
+                console.log(y);
+                // postCalcFunc(' + ');
+                console.log('ln');
+                break;
+                
             default:
                 break;
         }
     }
 }
 
-const sinFunc = () => {
+const trigFunc = (trigSign) => {
     // checkTrigFunc();
     y = parseFloat(x) + parseFloat(y);
-    opTrig = 'sin';
-    postCalcFunc('sin ');
+    z === '' ? y = 1 : y = parseFloat(y);
+    opTrig = `${trigSign}`;
+    y !== 1 ? postCalcFunc(`${trigSign} `) : postTrigFunc(`${trigSign} `);
+    //         postCalcFunc(' + ');
+    // inputScreen.innerText = preCalc;
+}
+
+const sinFunc = () => {
+    trigFunc('sin');
+    // checkTrigFunc();
+    // y = parseFloat(x) + parseFloat(y);
+    // z === '' ? y = 1 : y = parseFloat(y);
+    // opTrig = 'sin';
+    // postCalcFunc('sin ');
+    //         postCalcFunc(' + ');
+    // inputScreen.innerText = preCalc;
+}
+
+const cosFunc = () => {
+    trigFunc('cos');
+    // checkTrigFunc();
+    // y = parseFloat(x) + parseFloat(y);
+    // opTrig = 'cos';
+    // postCalcFunc('cos ');
+    //         postCalcFunc(' + ');
+    // inputScreen.innerText = preCalc;
+}
+
+const tanFunc = () => {
+    trigFunc('tan');
+    // checkTrigFunc();
+    // y = parseFloat(x) + parseFloat(y);
+    // opTrig = 'tan';
+    // postCalcFunc('tan ');
+    //         postCalcFunc(' + ');
+    // inputScreen.innerText = preCalc;
+}
+
+const lnFunc = () => {
+    trigFunc('ln');
+    // checkTrigFunc();
+    // y = parseFloat(x) + parseFloat(y);
+    // opTrig = 'ln';
+    // postCalcFunc('ln ');
     //         postCalcFunc(' + ');
     // inputScreen.innerText = preCalc;
 }
@@ -244,15 +336,17 @@ const sqrtFunc = () => {
     // <sup>${y}</sup>&Sqrt;
     // `;
     // postCalcFunc(' = ');
-    // preCalc = sqrtSign.innerText;
+    // preCalc = sqrtSign.innerTxt;
     // preCalc = y + opSign;
     // preCalc = y.sup() + '&Sqrt;';
     // preCalc = '&Sqrt;';
+    console.log(y);
     userInput.value = '';
     preCalc = ` 
     <span><sup>${y}</sup>&Sqrt;</span>
     `;
-    outputScreen.innerHTML = preCalc;
+    inputScreen.innerHTML = preCalc;
+    // outputScreen.innerHTML = preCalc;
     // outputScreen.innerHTML = ` 
     // <span><sup>${y}</sup>&Sqrt;</span>
     // `;
@@ -268,8 +362,10 @@ const powFunc = () => {
 const calcFunc = () => {
     checkOpFunc();
     // postCalFunc(' ^ ');
-    preCalc = y;
-    outputScreen.innerText = preCalc;
+    roundCalcFunc();
+    // preCalc = y;
+    outputScreen.innerText = y;
+    opCalc = 'plus';
     x = 0;
     y = 0;
     z = '';
@@ -279,19 +375,10 @@ const calcFunc = () => {
 }
 
 numKeys.forEach(numKey => {
-    // console.log('ayy');
     numKey.addEventListener('click', () => {
         opValue(numKey);
     })
 });
-
-// userInput.addEventListener('input', valueChange);
-
-// userInput.addEventListener('change', valueChange);
-
-// userInput.addEventListener('change', () => {
-//     console.log(2444);
-// });
 
 dotKeys.addEventListener('click', dotValue);
 
@@ -314,3 +401,9 @@ sqrtBtn.addEventListener('click', sqrtFunc);
 powBtn.addEventListener('click', powFunc);
 
 sinBtn.addEventListener('click', sinFunc);
+
+cosBtn.addEventListener('click', cosFunc);
+
+tanBtn.addEventListener('click', tanFunc);
+
+lnBtn.addEventListener('click', lnFunc);
