@@ -55,7 +55,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
-    /* font-size: 18px; */
+    font-size: 18px;
     /* font-weight: bolder; */
     align-items: center;
 }
@@ -63,6 +63,7 @@ body {
 .calculator-logo {
     display: flex;
     align-items: center;
+    align-items: flex-end;
 }
 
 .pre-logo {
@@ -75,8 +76,8 @@ body {
 
 .post-logo {
     text-transform: capitalize;
-    /* margin-bottom: 1px; */
-    font-size: 18px;
+    margin-bottom: 2px;
+    font-size: 22px;
     /* opacity: .9; */
     /* font-family: 'Open Sans', sans-serif; */
     font-family: serif;
