@@ -36,8 +36,10 @@ const timeFunc = () => {
     // const initialTime = Date.now();
     // console.log(ho);
     // console.log(initialTime);
-    console.log(timeNow);
+    // console.log(timeNow);
 }
+
+timeFunc();
 
 setInterval(timeFunc, 1000);
 
@@ -83,16 +85,41 @@ const postCalcFunc = (opSign) => {
     // userInput.value = '';
 }
 
-const postTrigFunc = (opSign) => {
+const initialTrigFunc = (opSign) => {
     // y = x;
     console.log(y);
     roundCalcFunc();
     console.log(y);
+    userInput.value = '';
+    console.log(opSign);
+    // outputScreen.innerText = y;
+    inputScreen.innerText = preCalc;
+    // userInput.value = '';
+}
+
+const postTrigFunc = (opSign) => {
+    // y = x;
+    preCalc = y + opSign;
+    console.log(y);
+    roundCalcFunc();
+    console.log(y);
+    userInput.value = '';
+    console.log(opSign);
+    // outputScreen.innerText = y;
+    inputScreen.innerText = preCalc;
+    // userInput.value = '';
+}
+
+const preTrigFunc = (opSign) => {
+    // y = x;
     preCalc = opSign;
+    console.log(y);
+    roundCalcFunc();
+    console.log(y);
     userInput.value = '';
     console.log(opSign);
     console.log(preCalc);
-    outputScreen.innerText = y;
+    // outputScreen.innerText = y;
     inputScreen.innerText = preCalc;
     // userInput.value = '';
 }
@@ -262,7 +289,7 @@ const trigFunc = (trigSign) => {
     y = parseFloat(x) + parseFloat(y);
     z === '' ? y = 1 : y = parseFloat(y);
     opTrig = `${trigSign}`;
-    y !== 1 ? postCalcFunc(`${trigSign} `) : postTrigFunc(`${trigSign} `);
+    y !== 1 ? postTrigFunc(`${trigSign} `) : preTrigFunc(`${trigSign} `);
     //         postCalcFunc(' + ');
     // inputScreen.innerText = preCalc;
 }
