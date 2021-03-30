@@ -2,7 +2,7 @@
 
 ## A Calculator
 
-I implemented a calcutor using HTML SS an vanilla JavaScript.
+I implemented a calcutor using HTML CSS and vanilla JavaScript.
 
 Here is the link to the live project: https://sca-level-4.netlify.app/
 
